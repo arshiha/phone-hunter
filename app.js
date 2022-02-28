@@ -39,10 +39,11 @@ const details = (id) => {
 const setDetails = (info) => {
   document.getElementById("details-container").innerHTML = `
   <div>
-  <img src="" alt="">
-  <h1 class="mt-5 text-center">Phone Name: ${info.slug}</h1>
+  <img class="mx-5 mt-5" src="${info.image}" alt="">
+  <h2 class="mt-5 text-center">Phone Name: ${info.slug}</h2>
   <h3 class="text-center">Phone Brand Name: ${info.brand}</h3>
-
+  <h3 class="text-center">Features: ${info.mainFeatures}</h3>
+   <h3 class="text-center">Phone Released: ${info.releaseDate}</h3>
   </div>
 
   `
