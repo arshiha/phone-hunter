@@ -16,14 +16,15 @@ const showPhoneDetails = (phones) => {
     const div = document.createElement('div');
     div.innerHTML = ` <div class="card border p-5">
     <div class="pic">
-      <img class="w-25" src="" alt="">
+      <img class="w-25" src="${phone.image}" alt="">
     </div>
-    <h2 class="mx-2">Phone Name: cool</h2>
-    <h5 class="mx-2">Phone Brand Name: </h5>
+    <h2 class="mx-2">Phone Name: ${phone.slug}</h2>
+    <h5 class="mx-2">Phone Brand Name: ${phone.brand}</h5>
     <div class="allButton">
         <button class="btn btn-primary mx-2 my-2">Details</button>
     </div>
 </div>`;
    parent.appendChild(div);
+   console.log(phone);
     }
 }
