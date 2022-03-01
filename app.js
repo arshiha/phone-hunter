@@ -1,25 +1,38 @@
 const allPhones = () => {
+  document.getElementById("phone-container").innerHTML = "";
+  document.getElementById("spinner").style.display = "block";
     const searchValue = document.getElementById('search-box').value;
 
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
+
 //   console.log(url);
   fetch(url)
   .then((response) => response.json())
-  .then((data) => showPhoneDetails(data.data));
+  .then((data) => {
+    console.log(data.data == null)
+    if(data.data == null) {
+      document.getElementById("spinner").style.display = "block";
+    }
+    else {
+      showPhoneDetails(data.data);
+      document.getElementById("spinner").style.display = "none";
+    }
+  });
+  
       
 };
 const showPhoneDetails = (phones) => {
     for (const phone of phones) {
         const parent = document.getElementById('phone-container');
     const div = document.createElement('div');
-    div.innerHTML = ` <div class="card border p-5">
+    div.innerHTML = ` <div class="card border p-5 bg-dark w-75">
     <div class="pic">
       <img class="w-25" src="${phone.image}" alt="">
     </div>
-    <h2 class="mx-2">Phone Name: ${phone.slug}</h2>
-    <h5 class="mx-2">Phone Brand Name: ${phone.brand}</h5>
+    <h2 class="mx-2 text-white">Phone Name: ${phone.slug}</h2>
+    <h5 class="mx-2 text-warning">Phone Brand Name: ${phone.brand}</h5>
     <div class="allButton">
-        <button onclick="details('${phone.slug}')" class="btn btn-primary mx-2 my-2">Details</button>
+        <button onclick="details('${phone.slug}')" class="btn btn-primary mx-2 my-2">Explore</button>
 
     </div>
 </div>`;
@@ -48,3 +61,4 @@ const setDetails = (info) => {
 
   `
 };
+
