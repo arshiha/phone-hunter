@@ -63,9 +63,13 @@ const setDetails = (detailsId) => {
      <p class="card-text"> Model: ${detailsId.mainFeatures.storage}</p>
      <p class="card-text"> display size: ${detailsId.mainFeatures.displaySize}</p>
      <p class="card-text"> Memory Card: ${detailsId.mainFeatures.memory}</p>
+     <p class="card-text"> Sensors: ${detailsId.mainFeatures.sensors}</p>
      <p class="card-text"> Others: ${detailsId.others.Bluetooth}</p>
      <p class="card-text"> USB: ${detailsId.others.USB}</p>
      <h3 class="card-text"> Release date: ${detailsId.releaseDate?detailsId.releaseDate:"Not found 404"}</h3>
+     <p class="card-text"> USB: ${detailsId.others.USB}</p>
+    
+
      <h3 class="card-text text-success">Others:</h3>
 
      <p class="card-title">GPS: ${detailsId.others.GPS}</p>
@@ -81,40 +85,4 @@ const setDetails = (detailsId) => {
 }
 
 
-
-
-
-/* =============================old code============================  */
-
-
-
-
-
-
-/* // const allPhones = () => {
-//   document.getElementById("phone-container").innerHTML = "";
-//   // document.getElementById("spinner").style.display = "block";
-//     const searchValue = document.getElementById('search-box').value;
-
-//   const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
-
-// //   console.log(url);
-//   fetch(url)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     // console.log(data.data == null)
-//     if(data.data.length == 0 ) {
-//       // document.getElementById("spinner").style.display = "block";
-//       alart("page not found")
-//     }
-//     else {
-//       showPhoneDetails(data.data.slice(0,20));
-//       // document.getElementById("spinner").style.display = "none";
-//     }
-//   });
-  
-      
-// };
-
-// update code */
-
+/* end */
