@@ -65,7 +65,16 @@ const setDetails = (detailsId) => {
      <p class="card-text"> Memory Card: ${detailsId.mainFeatures.memory}</p>
      <p class="card-text"> Others: ${detailsId.others.Bluetooth}</p>
      <p class="card-text"> USB: ${detailsId.others.USB}</p>
-     <p class="card-text"> Release date: ${detailsId.releaseDate?detailsId.releaseDate:"Not found 404"}</p>
+     <h3 class="card-text"> Release date: ${detailsId.releaseDate?detailsId.releaseDate:"Not found 404"}</h3>
+     <h3 class="card-text text-success">Others:</h3>
+
+     <p class="card-title">GPS: ${detailsId.others.GPS}</p>
+     <p class="card-title">Radio: ${detailsId.others.Radio}</p>
+     <p class="card-title">Bluetooth: ${detailsId.others.Bluetooth}</p>
+     <p class="card-title">NFC: ${detailsId.others.NFC}</p>
+     <p class="card-title">WLAN: ${detailsId.others.WLAN}</p>
+     
+
     </div>
   `;
   phoneDetails.appendChild(div)
